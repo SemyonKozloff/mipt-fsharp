@@ -38,7 +38,7 @@ let lab3 (mainPageAdress:string) =
                             |> Seq.filter (fun (x:String) -> (x.[0] <> '/' && x.[0] <> '#')) // отфильтровываем относительные ссылки
                             |> Seq.map (fun x -> detLang x)
                             |> Seq.fold (fun (ruAcc, engAcc) lang -> if lang = RU then (ruAcc + 1, engAcc) else (ruAcc, engAcc + 1)) (0, 0)
-  printf "RU: %d\n EN: %d\n" ruCounter engCounter
+  ruCounter, engCounter 
 
 let LISP_ADRESS = "https://ru.wikipedia.org/wiki/%D0%9B%D0%B8%D1%81%D0%BF"
 lab3 LISP_ADRESS
